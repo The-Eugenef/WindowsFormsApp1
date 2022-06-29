@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         float x, y;
         string count;
         bool znak = true;
+        
 
         private void button17_Click_1(object sender, EventArgs e)
         {
@@ -128,7 +129,19 @@ namespace WindowsFormsApp1
             znak = true;
         }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void button6_Click(object sender, EventArgs e)
         {
