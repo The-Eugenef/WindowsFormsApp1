@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         }
 
         float x, y;
-        int count;
+        string count;
         bool znak = true;
 
         private void button17_Click_1(object sender, EventArgs e)
@@ -44,48 +44,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void calculate()
-        {
-            switch (count)
-            {
-                case 1:
-                    y = x + float.Parse(textBox1.Text);
-                    textBox1.Text = y.ToString();
-                    break;
-
-                case 2:
-                    y = x - float.Parse(textBox1.Text);
-                    textBox1.Text = y.ToString();
-                    break;
-
-                case 3:
-                    y = x * float.Parse(textBox1.Text);
-                    textBox1.Text = y.ToString();
-                    break;
-
-                case 4:
-                    y = x / float.Parse(textBox1.Text);
-                    textBox1.Text = y.ToString();
-                    break;
-
-                case 5:
-                    y = (float)Math.Pow(x, float.Parse(textBox1.Text));
-                    textBox1.Text = y.ToString();
-                    break;
-
-                case 6:
-                    y = (float)Math.Exp(x);
-                    textBox1.Text = y.ToString();
-                    break;
-            }
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
             BackColor = Color.Purple;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 1;
+            count = "+";
             label1.Text = x.ToString() + "+";
             znak = true;
         }
@@ -95,7 +61,7 @@ namespace WindowsFormsApp1
             BackColor = Color.Pink;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 2;
+            count = "-";
             label1.Text = x.ToString() + "-";
             znak = true;
         }
@@ -105,7 +71,7 @@ namespace WindowsFormsApp1
             BackColor = Color.Green;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 3;
+            count = "*";
             label1.Text = x.ToString() + "*";
             znak = true;
         }
@@ -115,15 +81,20 @@ namespace WindowsFormsApp1
             BackColor = Color.Blue;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 4;
+            count = "/";
             label1.Text = x.ToString() + "/";
             znak = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            calculate();
+            y = float.Parse(textBox1.Text);
+            Interface1 calculator =
+                TwoArgumentsFactory.Creator("Calc");
+            float res = calculator.Calculate(x, y,count);
+            textBox1.Text = res.ToString();
             label1.Text = "";
+            
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -141,8 +112,7 @@ namespace WindowsFormsApp1
         {
             BackColor = Color.Yellow;
             x = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 6;
+            count = "e^";
             label1.Text = "e^" + x.ToString();
             znak = true;
 
@@ -153,7 +123,7 @@ namespace WindowsFormsApp1
             BackColor = Color.Red;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 5;
+            count = "^";
             label1.Text = x.ToString() + "^";
             znak = true;
         }
