@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Calc : Interface1
+    public class Calc : Interface1
     {
         public float Calculate(float a, float b, string c)
         {

@@ -8,6 +8,6 @@ namespace WindowsFormsApp1
 {
     internal interface Interface1
     {
-        float Calculate(float firstValue, float secondValue, string operation); 
+        float Calculate(float firstValue, float secondValue, string operatorion); 
     }
 }

@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
         float x, y;
         string count;
         bool znak = true;
-        
 
         private void button17_Click_1(object sender, EventArgs e)
         {
