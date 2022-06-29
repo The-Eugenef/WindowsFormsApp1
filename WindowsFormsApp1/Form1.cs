@@ -113,11 +113,22 @@ namespace WindowsFormsApp1
                     y = x / float.Parse(textBox1.Text);
                     textBox1.Text = y.ToString();
                     break;
+
+                case 5:
+                    y = (float)Math.Pow(x, float.Parse(textBox1.Text));
+                    textBox1.Text = y.ToString();
+                    break;
+
+                case 6:
+                    y = (float)Math.Exp(x);
+                    textBox1.Text = y.ToString();
+                    break;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            BackColor = Color.Purple;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 1;
@@ -127,6 +138,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            BackColor = Color.Pink;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 2;
@@ -136,6 +148,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            BackColor = Color.Green;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 3;
@@ -145,6 +158,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            BackColor = Color.Blue;
             x = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 4;
@@ -164,9 +178,30 @@ namespace WindowsFormsApp1
             label1.Text = "";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Yellow;
+            x = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 6;
+            label1.Text = "e^" + x.ToString();
+            znak = true;
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Red;
+            x = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 5;
+            label1.Text = x.ToString() + "^";
+            znak = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
